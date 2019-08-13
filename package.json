@@ -1,0 +1,23 @@
+{
+  "name": "publish-to-github-action",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "dockerlint Dockerfile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeal/publish-to-github-action.git"
+  },
+  "keywords": [],
+  "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
+  "license": "(Apache-2.0 AND MIT)",
+  "bugs": {
+    "url": "https://github.com/mikeal/publish-to-github-action/issues"
+  },
+  "homepage": "https://github.com/mikeal/publish-to-github-action#readme",
+  "dependencies": {
+    "dockerlint": "^0.3.9"
+  }
+}
