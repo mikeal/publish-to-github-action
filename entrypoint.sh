@@ -8,21 +8,17 @@ fi
 
 # initialize git
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-echo "test1"
-git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config user.name "Automated Publisher"
+git config user.email "publish-to-github-action@users.noreply.github.com"
 git remote add publisher "${remote_repo}"
 git show-ref # useful for debugging
 git branch --verbose
-echo "test2"
+
 # publish any new files
 git add -A
 timestamp=$(date -u)
-echo "test3"
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
-echo "test4"
 git branch tmp
 git checkout master
 git merge tmp
 git push publisher master
-echo "test5"
