@@ -20,5 +20,5 @@ timestamp=$(date -u)
 echo "test3"
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
 echo "test4"
-git push publish-origin master
+git push origin master
 echo "test5"
