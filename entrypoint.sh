@@ -19,7 +19,7 @@ git add -A
 timestamp=$(date -u)
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
 
-if [$? == 1]
+if [ $? == 1 ]
 then 
   exit 0
 fi
