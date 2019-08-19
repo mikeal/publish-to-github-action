@@ -9,7 +9,7 @@ LABEL "repository"="https://github.com/mikeal/publish-to-github-action"
 LABEL "homepage"="https://github.com/mikeal/publish-to-github-action"
 LABEL "maintainer"="peaceiris"
 
-RUN apk add --no-cache git openssh-client
+RUN apk add --no-cache git openssh-client bash
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
