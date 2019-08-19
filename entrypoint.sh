@@ -17,12 +17,7 @@ git branch --verbose
 # publish any new files
 git add -A
 timestamp=$(date -u)
-git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
-
-if [ $? -eq 1 ]
-then 
-  exit 0
-fi
+git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
 
 git branch tmp
 git checkout master
