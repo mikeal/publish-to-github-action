@@ -14,6 +14,9 @@ git remote add publisher "${remote_repo}"
 git show-ref # useful for debugging
 git branch --verbose
 
+# install lfs hooks
+git lfs install
+
 # publish any new files
 git add -A
 timestamp=$(date -u)
