@@ -14,7 +14,7 @@ RUN apk --no-cache add openssl git curl openssh-client bash \
     && cd tmp \
     && curl -sLO https://github.com/git-lfs/git-lfs/releases/download/v2.6.0/git-lfs-linux-amd64-v2.6.0.tar.gz \
     && tar -zxf git-lfs-linux-amd64-v2.6.0.tar.gz \
-    && ./install.sh
+    && ./install.sh \
     && cd .. \
     && rm -rf tmp \
     
