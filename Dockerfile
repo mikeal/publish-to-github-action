@@ -21,4 +21,4 @@ RUN echo CWD `pwd` \
     && tar -zxf git-lfs-linux-amd64-v2.6.0.tar.gz \
     && ./install.sh \
     && cd / \
-    && rm -rf /tmp/lfs 
+    && rm -rf /tmp/lfs
