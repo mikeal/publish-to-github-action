@@ -10,6 +10,7 @@ LABEL "homepage"="https://github.com/mikeal/publish-to-github-action"
 LABEL "maintainer"="peaceiris"
 
 RUN apk --no-cache add openssl git curl openssh-client bash \
+    && echo CWD `pwd` \
     && mkdir /tmp/lfs \
     && cd /tmp/lfs \
     && curl -sLO https://github.com/git-lfs/git-lfs/releases/download/v2.6.0/git-lfs-linux-amd64-v2.6.0.tar.gz \
