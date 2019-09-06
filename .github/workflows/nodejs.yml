@@ -20,3 +20,4 @@ jobs:
         npm test
     - uses: zbeekman/ShellCheck-Linter-Action@v1.0.1
       name: shell linter
+    - uses: mikeal/publish-to-github-action@master
