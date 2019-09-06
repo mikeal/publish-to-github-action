@@ -9,7 +9,7 @@ LABEL "repository"="https://github.com/mikeal/publish-to-github-action"
 LABEL "homepage"="https://github.com/mikeal/publish-to-github-action"
 LABEL "maintainer"="peaceiris"
 
-RUN apk --no-cache add openssl git curl openssh-client bash 
+RUN apk --no-cache add openssl git curl openssh-client bash
     
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
