@@ -10,11 +10,13 @@ LABEL "homepage"="https://github.com/mikeal/publish-to-github-action"
 LABEL "maintainer"="peaceiris"
 
 RUN apk --no-cache add openssl git curl openssh-client bash \
+    && mkdir tmp \
+    && cd tmp \
     && curl -sLO https://github.com/git-lfs/git-lfs/releases/download/v2.6.0/git-lfs-linux-amd64-v2.6.0.tar.gz \
     && tar -zxf git-lfs-linux-amd64-v2.6.0.tar.gz \
-    && mv git-lfs/git-lfs /usr/bin/ \
-    && rm -rf git-lfs \
-    && rm -rf git-lfs-linux-amd64-2.6.0.tar.gz
-
+    && ./install.sh
+    && cd .. \
+    && rm -rf tmp \
+    
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
