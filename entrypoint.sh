@@ -10,7 +10,6 @@ fi
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config user.name "Automated Publisher"
 git config user.email "publish-to-github-action@users.noreply.github.com"
-git remote add publisher "${remote_repo}"
 git show-ref # useful for debugging
 git branch --verbose
 
@@ -25,4 +24,4 @@ git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
 git branch tmp
 git checkout master
 git merge tmp
-git push publisher master
+git push "${remote_repo}" master
