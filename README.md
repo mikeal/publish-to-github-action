@@ -13,7 +13,7 @@ Usage:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-If you can get away with only ever writing new files, instead of updating them, you won’t regret it ;) Every time you update a file you retain the history of the file. Over time this can become quite large and contain a lot of duplicate data, even when using Git LFS as described below. The only want to garbage collect this historical data is to use a [hefty Java program called BFG](https://rtyley.github.io/bfg-repo-cleaner/) to re-write the history.
+If you can get away with only ever writing new files, instead of updating them, you won’t regret it ;) Every time you update a file you retain the history of the file. Over time this can become quite large and contain a lot of duplicate data, even when using Git LFS as described below. The only way to garbage collect this historical data is to use a [hefty Java program called BFG](https://rtyley.github.io/bfg-repo-cleaner/) to re-write the history.
 
 ## Large Files (Git LFS)
 
