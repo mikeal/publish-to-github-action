@@ -7,8 +7,7 @@ if [ -z "${GITHUB_TOKEN}" ]; then
 fi
 
 if [ -z "${BRANCH_NAME}" ]; then
-    echo "error: not found BRANCH_NAME"
-    exit 1
+   export BRANCH_NAME=master
 fi
 
 # initialize git
