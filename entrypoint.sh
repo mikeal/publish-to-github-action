@@ -10,6 +10,11 @@ if [ -z "${BRANCH_NAME}" ]; then
    export BRANCH_NAME=master
 fi
 
+if [ -z "${COMMIT_MESSAGE}" ]; then
+   timestamp=$(date -u)
+   export COMMIT_MESSAGE="Automated publish: ${timestamp} ${GITHUB_SHA}"
+fi
+
 # initialize git
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 git config http.sslVerify false
@@ -25,7 +30,6 @@ git lfs install
 # publish any new files
 git checkout ${BRANCH_NAME}
 git add -A
-timestamp=$(date -u)
-git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
+git commit -m ${COMMIT_MESSAGE} || exit 0
 git pull --rebase publisher ${BRANCH_NAME}
 git push publisher ${BRANCH_NAME}
