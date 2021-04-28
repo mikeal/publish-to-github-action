@@ -30,6 +30,6 @@ git lfs install
 # publish any new files
 git checkout ${BRANCH_NAME}
 git add -A
-git commit -m ${COMMIT_MESSAGE} || exit 0
+git commit -m "${COMMIT_MESSAGE}" || exit 0
 git pull --rebase publisher ${BRANCH_NAME}
 git push publisher ${BRANCH_NAME}
